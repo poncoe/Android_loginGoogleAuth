@@ -41,7 +41,6 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
-    private TextView kebijakansl;
 
     private SignInButton mSignInButton;
 
@@ -61,20 +60,11 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
             finish();
         }
 
-        kebijakansl = findViewById(R.id.kebijakan);
-
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
 
         changeStatusBarColor();
-
-        kebijakansl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Login.this, PrivacyPolicy.class));
-            }
-        });
 
     }
 
@@ -96,7 +86,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id)) // IF RED MAKESURE YOU HAVE google-services.json FILE FOR FIX IT!
                 .requestEmail()
                 .build();
 
