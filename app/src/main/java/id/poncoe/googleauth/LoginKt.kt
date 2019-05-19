@@ -1,4 +1,4 @@
-package id.pesixirmoviement.app
+package id.poncoe.googleauth
 
 import android.content.Intent
 import android.graphics.Color
@@ -33,7 +33,7 @@ class LoginKt : AppCompatActivity(), GoogleApiClient.OnConnectionFailedListener 
     private var mFirebaseAuth: FirebaseAuth? = null
     private var auth: FirebaseAuth? = null
     private var progressBar: ProgressBar? = null
-    private var kebijakansl: TextView? = null
+    //private var kebijakansl: TextView? = null
 
     private var mSignInButton: SignInButton? = null
 
@@ -52,7 +52,7 @@ class LoginKt : AppCompatActivity(), GoogleApiClient.OnConnectionFailedListener 
             finish()
         }
 
-        kebijakansl = findViewById(R.id.kebijakan)
+       // kebijakansl = findViewById(R.id.kebijakan)
 
         if (Build.VERSION.SDK_INT >= 21) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -60,7 +60,7 @@ class LoginKt : AppCompatActivity(), GoogleApiClient.OnConnectionFailedListener 
 
         changeStatusBarColor()
 
-        kebijakansl!!.setOnClickListener { startActivity(Intent(this@LoginKt, PrivacyPolicy::class.java)) }
+        //kebijakansl!!.setOnClickListener { startActivity(Intent(this@LoginKt, PrivacyPolicy::class.java)) }
 
     }
 
